@@ -135,7 +135,7 @@ pip install numpy pandas matplotlib plotly scipy scikit-learn jupyterlab ipywidg
 Установка библиотек с использованием `uv`:
 
 ```commandline
-uv pip install numpy pandas matplotlib plotly scipy scikit-learn jupyterlab
+uv pip install numpy pandas matplotlib plotly scipy scikit-learn jupyterlab ipywidgets ipympl seaborn kaleido dash
 ```
 
 Пример выполнения установки пакета `dash`:
