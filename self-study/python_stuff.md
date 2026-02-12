@@ -357,3 +357,16 @@ NumPy &ndash; Numerical Python &ndash; библиотека для работы 
 - Модуль `fft` &ndash; БПФ
 - Модуль `integrate` &ndash; вычисление интегралов
 - И т.д.
+
+## Корректный дамп виджетов (графиков) в jupyter notebook
+
+### JupyterLab / JupyterLab Desktop
+
+Для корректного сохранения *отрендеренных* графиков в питон-тетрадке необходимо включить параметр `Save Jupyter widget state in notebooks` (`Settings` &rarr; фильтр по `widget` &rarr; `Jupyter Widgets` &rarr; `Save Jupyter widget state in notebooks`):
+
+<div align="center">
+  <img src="images/python_stuff_22.png" width="1000" title="JupyterLab Desktop"/>
+  <p style="text-align: center">
+    Рисунок 22 &ndash; JupyterLab Desktop: Save Jupyter widget state in notebooks
+  </p>
+</div>

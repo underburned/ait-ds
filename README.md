@@ -81,6 +81,10 @@
 
 ## Разное
 
+### Корректный дамп виджетов (графиков) в jupyter notebook
+
+Для корректного сохранения *отрендеренных* графиков в питон-тетрадке необходимо включить параметр `Save Jupyter widget state in notebooks` (`Settings` &rarr; фильтр по `widget` &rarr; `Jupyter Widgets` &rarr; `Save Jupyter widget state in notebooks`).
+
 ### Визуализация JS графиков
 
 С визуализацией некоторых JS графиков может помочь [nbviewer](https://nbviewer.org/). Например, графики с использованием `Plotly` в 1 лекции и некоторые JS графики из 6 лекции отображаются в `nbviewer`, но графики, сгенерированные `CatBoost` &ndash; нет (хотя под капотом там тоже `Plotly`).  
