@@ -83,7 +83,8 @@
 
 ### Корректный дамп виджетов (графиков) в jupyter notebook
 
-Для корректного сохранения *отрендеренных* графиков в питон-тетрадке необходимо включить параметр `Save Jupyter widget state in notebooks` (`Settings` &rarr; фильтр по `widget` &rarr; `Jupyter Widgets` &rarr; `Save Jupyter widget state in notebooks`).
+Для корректного сохранения *отрендеренных* графиков в питон-тетрадке необходимо включить параметр `Save Widget State Automatically`: `Settings` &rarr; `Save Widget State Automatically`.
+> Или `Save Jupyter widget state in notebooks`: `Settings` &rarr; фильтр по `widget` &rarr; `Jupyter Widgets` &rarr; `Save Jupyter widget state in notebooks`.
 
 ### Визуализация JS графиков
 

@@ -362,7 +362,8 @@ NumPy &ndash; Numerical Python &ndash; библиотека для работы 
 
 ### JupyterLab / JupyterLab Desktop
 
-Для корректного сохранения *отрендеренных* графиков в питон-тетрадке необходимо включить параметр `Save Jupyter widget state in notebooks` (`Settings` &rarr; фильтр по `widget` &rarr; `Jupyter Widgets` &rarr; `Save Jupyter widget state in notebooks`):
+Для корректного сохранения *отрендеренных* графиков в питон-тетрадке необходимо включить параметр `Save Widget State Automatically`: `Settings` &rarr; `Save Widget State Automatically`.
+> Или `Save Jupyter widget state in notebooks`: `Settings` &rarr; фильтр по `widget` &rarr; `Jupyter Widgets` &rarr; `Save Jupyter widget state in notebooks`.
 
 <div align="center">
   <img src="images/python_stuff_22.png" width="1000" title="JupyterLab Desktop"/>
@@ -370,3 +371,5 @@ NumPy &ndash; Numerical Python &ndash; библиотека для работы 
     Рисунок 22 &ndash; JupyterLab Desktop: Save Jupyter widget state in notebooks
   </p>
 </div>
+
+> Автосохранение документа лучше отключить.
