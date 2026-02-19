@@ -96,6 +96,39 @@ python.exe -m pip install --upgrade pip
 pip install uv
 ```
 
+#### Установка в Linux
+
+Скачивание bash-скрипта `uv-installer.sh` и его запуск:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+> Протестировано в Ubuntu 24.04, путь /home/<имя юзера>/.local/bin.
+
+Пример вывода результата выполнения команды:
+
+```bash
+ud@uduwpc:~$ curl -LsSf https://astral.sh/uv/install.sh | sh
+downloading uv 0.10.4 x86_64-unknown-linux-gnu
+no checksums to verify
+installing to /home/ud/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+```
+
+Еще один способ:
+
+```bash
+sudo snap install astral-uv
+```
+
 ## Виртуальное окружение
 
 Виртуальное окружение (*virtual environment*) &ndash; создание изолированного пространства для работы над конкретным проектом, что позволяет управлять его зависимостями, не влияя на другие проекты или глобальную установку Python. Физически представляет собой отдельную директорию с копиями интерпретатора и менеджера пакетов и скриптом активации виртуального окружения.
@@ -129,13 +162,13 @@ ait-ds\Scripts\activate
 Установка библиотек с использованием `pip`:
 
 ```commandline
-pip install numpy pandas matplotlib plotly scipy scikit-learn jupyterlab ipywidgets ipympl seaborn kaleido dash
+pip install numpy pandas matplotlib plotly scipy scikit-learn jupyter jupyterlab ipywidgets ipympl seaborn kaleido dash
 ```
 
 Установка библиотек с использованием `uv`:
 
 ```commandline
-uv pip install numpy pandas matplotlib plotly scipy scikit-learn jupyterlab ipywidgets ipympl seaborn kaleido dash
+uv pip install numpy pandas matplotlib plotly scipy scikit-learn jupyter jupyterlab ipywidgets ipympl seaborn kaleido dash
 ```
 
 Пример выполнения установки пакета `dash`:
