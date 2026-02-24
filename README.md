@@ -78,6 +78,7 @@
 2. [Питон-ноутбук с примерами использования numpy](self-study/numpy_examples.ipynb)
 3. [Pandas. Базовые операции](self-study/pandas_api.md)
 4. [Дисбаланс классов](self-study/class_imbalance.md)
+5. [Важность признаков](self-study/feature_importance.md)
 
 ## Разное
 
