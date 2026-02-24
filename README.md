@@ -77,7 +77,7 @@
 1. [Установка Python. Менеджеры пакетов. Виртуальное окружение. Настройка IDE](self-study/python_stuff.md)
 2. [Питон-ноутбук с примерами использования numpy](self-study/numpy_examples.ipynb)
 3. [Pandas. Базовые операции](self-study/pandas_api.md)
-4. **[TBA]**
+4. [Дисбаланс классов](self-study/class_imbalance.md)
 
 ## Разное
 
