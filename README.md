@@ -8,7 +8,7 @@
 2. [Задачи классификации. Метрики качества. Классификация *kNN*](lectures/lecture_2/lecture_2.ipynb)
 3. [Деревья решений](lectures/lecture_3/lecture_3.ipynb)
 4. [Линейная регрессия. Метрики качества](lectures/lecture_4/lecture_4.ipynb)
-5. Градиентный бустинг
+5. [Градиентный бустинг](lectures/lecture_5/lecture_5.ipynb) [*[экспорт в HTML]*](lectures/lecture_5/lecture_5.html)
 6. **[TBA]**
 
 ## Лабораторные работы
