@@ -406,3 +406,15 @@ NumPy &ndash; Numerical Python &ndash; библиотека для работы 
 </div>
 
 > Автосохранение документа лучше отключить.
+
+## Плагины JupyterLab
+
+### Плагин для вывода времени выполнения кода в ячейке
+
+Удобный плагин для JupyterLab'а [`jupyterlab-execute-time` @ GitHub](https://github.com/deshaw/jupyterlab-execute-time):
+
+```bash
+pip install jupyterlab_execute_time
+```
+
+> Для Jupyter Notebook сервера есть пакет [Unofficial Jupyter Notebook Extensions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/index.html), [Execute Time](https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tree/7672d429957aaefe9f2e71b15e3b78ebb9ba96d1/src/jupyter_contrib_nbextensions/nbextensions/execute_time) &ndash; один из плагинов. Для конфигурирования плагинов можно установить [Jupyter Nbextensions Configurator](https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator).
