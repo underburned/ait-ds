@@ -445,3 +445,54 @@ OSS комбинирует две идеи:
 Алгоритм выполняет два последовательных этапа:
 - `SMOTE` создает новые синтетические примеры для миноритарного класса путем линейной интерполяции между существующими точками и их ближайшими соседями.
 - `Tomek Links` удаляет пары близко расположенных примеров разных классов, которые находятся на границе разделения.
+
+## Сэмплирование + GridSearchCV
+
+> `GridSearchCV` в кросс-валидации не должен в качестве валидационного набора использовать сэмплированные данные. Для этого в `imblearn` есть отдельная реализация пайплайна [imblearn.pipeline.Pipeline](https://imbalanced-learn.org/stable/references/generated/imblearn.pipeline.Pipeline.html#imblearn.pipeline.Pipeline), который позволяет использовать сэмплеры вместе с кросс-валидацией (см. [Usage of pipeline embedding samplers](https://imbalanced-learn.org/stable/auto_examples/pipeline/plot_pipeline_classification.html)):
+
+> We can now use the pipeline created as a normal classifier where resampling will happen when calling `fit` and disabled when calling `decision_function`, `predict_proba`, or `predict`.
+
+### Пример пайплайна
+
+Пайплайн будет состоять из 3х этапов:
+- Сэмплирование данных `SMOTENC`
+- Кодирование категориальных признаков `OneHotEncoder`'ом
+- Классификация `AdaBoost`
+
+На этапе обучения модели (пайплайна) при вызове `.fit()` применяется сэмплирование, а при вызове `.predict()` данный шаг скипается (см. [Using Smote with Gridsearchcv in Scikit-learn @ StackOverflow](https://stackoverflow.com/a/50245954)).
+
+Таким образом на этапе обучения:
+- сэмплирование данных `SMOTENC` (с обратным преобразованием в исходные категориальные признаки)
+- кодирование категориальных признаков `OneHotEncoder`'ом
+- `GridSearchCV`: обучение на сэмплированных обучающих данных и валидация на валидационном наборе из обучающей выборки без сэмплирования на каждой итерации  
+
+Таким образом на этапе предсказания:
+- кодирование категориальных признаков `OneHotEncoder`'ом
+- предсказание (на вход передаем тестовую выборку с категориальными признаками без кодирования)
+
+```python
+import numpy as np
+from imblearn.pipeline import Pipeline as ImbPipeline, make_pipeline
+from sklearn.model_selection import GridSearchCV
+from sklearn.preprocessing import OneHotEncoder
+
+ohe = OneHotEncoder(dtype=bool, handle_unknown='ignore')
+sm = SMOTENC(categorical_features=cat_cols, categorical_encoder=ohe, random_state=42)
+abc_model = AdaBoostClassifier(n_estimators=100, random_state=777)
+
+cat_cols_ohe = [var for var in cat_cols if not var == 'RainToday']
+cat_cols_le = ['RainToday']
+
+imb_pipeline = ImbPipeline(steps=[('sampling', sm), ('encoding', ohe), ('classification', abc_model)])
+
+grid_params = {
+    'classification__n_estimators': [100],
+    'classification__learning_rate': np.arange(0.1, 1.1, 0.1)
+}
+
+grid_search = GridSearchCV(
+    imb_pipeline, grid_params, cv = 5, n_jobs = -1, verbose = 3, error_score='raise'
+)
+
+grid_search.fit(X_cat_train, y_cat_train)
+```
